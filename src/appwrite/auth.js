@@ -1,7 +1,7 @@
 import conf from '../conf/conf'
 import {Client, ID, Account} from 'appwrite'
 
-class AuthService{
+export class AuthService{
     client = new Client();
     account;
 
@@ -50,9 +50,10 @@ class AuthService{
         try {
             return await this.account.get()
         } catch (error) {
-            console.log("Appwrite error :: getCurrentUser :: error", error);
-            
+            console.log("Appwrite error :: getCurrentUser :: error", error); 
         }
+
+        return null;
     }
 }
 
