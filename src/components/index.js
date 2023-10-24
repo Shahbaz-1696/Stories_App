@@ -11,6 +11,7 @@ import Select from './Form-Components/Select'
 import Login from './Login/Login'
 import Signup from './Signup/Signup'
 import PostForm from './Post-Form/PostForm'
+import AuthLayout from './AuthLayout/AuthLayout'
 
 
 export {
@@ -27,5 +28,5 @@ export {
     Login,
     Signup,
     PostForm,
-    
+    AuthLayout,
 }

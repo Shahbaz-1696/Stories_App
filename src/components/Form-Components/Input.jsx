@@ -18,7 +18,7 @@ const Input = React.forwardRef(function Input(
         ref={ref}
         id={id}
         {...props}
-        className={`${className} w-full inline-block duration-200 hover:bg-zinc-300 bg-white text-black px-6 py-3 outline-none border border-gray-50`}
+        className={`${className} w-full inline-block duration-200 rounded-lg bg-white text-black px-6 py-3 mt-2 outline-none border border-gray-50`}
       />
     </div>
   );

@@ -4,7 +4,7 @@ import { Logo } from '../index'
 function Footer() {
   return (
     <footer className="min-h-screen max-w-screen">
-      <div className="bg-stone-800 flex flex-wrap font-bold text-xl rounded-lg items-center text-stone-200">
+      <div className="bg-slate-600 flex flex-wrap font-bold text-xl rounded-lg items-center text-stone-200">
         <div className="w-1/3 flex flex-wrap justify-start p-4">
           <Logo width="100px" />
         </div>

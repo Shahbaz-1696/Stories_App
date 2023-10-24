@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import parse from "html-react-parser";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import appwriteService from "../appwrite/configure";
+import appwriteService from "../appwrite/config";
 import { Container, Button } from "../components";
 
 export default function Post() {

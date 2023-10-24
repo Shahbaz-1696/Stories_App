@@ -36,7 +36,7 @@ function Signup() {
         <h2 className="text-black font-bold text-2xl text-center">
           Create a new account
         </h2>
-        <p className="">
+        <p className="text-black/60 mt-2 text-center">
           Already have an account?&nbsp;
           <Link
             to="/login"
@@ -47,7 +47,7 @@ function Signup() {
         </p>
         {error && <p className="text-red-600 text-center mt-8">{error}</p>}
         <form onSubmit={handleSubmit(create)}>
-            <div className="space-y-5">
+            <div className="space-y-5 mt-2">
                 <Input
                 type="text"
                 placeholder="Enter your name"
@@ -64,8 +64,8 @@ function Signup() {
                 required: true,
                 validate: {
                   matchPattern: (value) =>
-                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                    "Email address must be a valid address",
+                  /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                  "Email address must be a valid address",
                 },
               })}
             />
@@ -77,7 +77,7 @@ function Signup() {
                 required: true,
             })}
             />
-            <Button className="w-full" type="submit">Create Account</Button>
+            <Button className="w-full rounded-lg text-white" type="submit" bgColor="bg-blue-600">Create Account</Button>
             </div>
         </form>
       </div>

@@ -27,7 +27,7 @@ function App() {
   return loading ? (
     <h1>Something went wrong</h1>
   ) : (
-    <div className='flex flex-wrap justify-between min-h-screen'>
+    <div className='flex flex-wrap justify-between max-h-screen content-between'>
       <div className='w-full block'>
         <Header />
         <main className='bg-slate-400 w-full'>
