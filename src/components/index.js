@@ -9,6 +9,7 @@ import RTE from './Form-Components/RTE'
 import Input from './Form-Components/Input'
 import Select from './Form-Components/Select'
 import Login from './Login/Login'
+import Signup from './Signup/Signup'
 
 export {
     Header,
@@ -21,5 +22,6 @@ export {
     RTE,
     Input,
     Select,
-    Login
+    Login,
+    Signup
 }
