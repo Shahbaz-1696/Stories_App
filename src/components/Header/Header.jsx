@@ -4,32 +4,32 @@ import { Container, LogoutBtn, Logo } from "..";
 
 function Header() {
   const navigate = useNavigate();
-  const authStatus = useSelector((state) => state.auth.userData);
+  const authStatus = useSelector((state) => state.auth.status);
   const navItems = [
     {
       name: "Home",
       slug: "/",
-      status: true,
+      active: true,
     },
     {
       name: "Login",
       slug: "/login",
-      status: !authStatus,
+      active: !authStatus,
     },
     {
       name: "Signup",
       slug: "/signup",
-      status: !authStatus,
+      active: !authStatus,
     },
     {
       name: "All Posts",
       slug: "/all-posts",
-      status: authStatus,
+      active: authStatus,
     },
     {
       name: "Add Post",
       slug: "/add-post",
-      status: authStatus,
+      active: authStatus,
     },
   ];
   return (
