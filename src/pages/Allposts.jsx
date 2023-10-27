@@ -8,19 +8,24 @@ function Allposts() {
   const storePosts = useSelector((state) => state.posts.posts);
 
   useEffect(() => {
-    if (storePosts.length > 0) {
-      setPosts(storePosts);
-    } else {
-      appwriteService
-        .getAllPosts()
-        .then((posts) => {
-            if(posts){
-                setPosts(posts.documents)
-            }
-        })
-        .catch((error) => console.log(error));
-    }
-  }, [posts, storePosts]);
+    // if (storePosts.length > 0) {
+    //   setPosts(storePosts);
+    // } else {
+    //   appwriteService
+    //     .getAllPosts([])
+    //     .then((posts) => {
+    //         if(posts){
+    //             setPosts(posts.documents)
+    //         }
+    //     })
+    //     .catch((error) => console.log(error));
+    // }
+    appwriteService.getAllPosts([]).then((posts) => {
+      if (posts) {
+          setPosts(posts.documents)
+      }
+  })
+  }, []);
 
   return (
   <div className="w-full py-8">

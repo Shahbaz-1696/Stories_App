@@ -13,8 +13,8 @@ function Login() {
   const { register, handleSubmit } = useForm();
 
   const login = async (data) => {
+    setError("");
     try {
-      setError("");
       const session = await authService.login(data);
       if (session) {
         const userData = await authService.getCurrentUser(session);
