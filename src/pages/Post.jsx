@@ -7,6 +7,8 @@ import { Container, Button } from "../components";
 
 export default function Post() {
   const [post, setPost] = useState(null);
+  
+  
   const { slug } = useParams();
   const navigate = useNavigate();
 
@@ -45,11 +47,11 @@ export default function Post() {
         {isAuthor && (
             <div className="absolute right-6 top-6">
             <Link to={`/edit-post/${post.$id}`}>
-              <Button className="mr-3" bgColor="bg-red-500">
+              <Button className="mr-3" bgColor="bg-red-500 rounded-xl">
                 Edit
               </Button>
             </Link>
-            <Button bgColor="bg-red-500" onClick={deletePost}>
+            <Button bgColor="bg-red-500 mt-4 rounded-xl" onClick={deletePost}>
               Delete
             </Button>
           </div>
@@ -62,6 +64,7 @@ export default function Post() {
             {parse(post.content)}
         </div>
       </Container>
+      
     </div>
   ) : null;
 }
