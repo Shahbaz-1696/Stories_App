@@ -30,7 +30,7 @@ function App() {
     <div className='flex flex-wrap justify-between max-h-screen content-between'>
       <div className='w-full block'>
         <Header />
-        <main className='bg-slate-400 w-full'>
+        <main className='bg-slate-400'>
           <Outlet /> 
         </main>
         <Footer />
