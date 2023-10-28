@@ -4,35 +4,33 @@ import { useSelector } from "react-redux";
 import appwriteService from "../appwrite/config";
 
 function Allposts() {
-  const [posts, setPosts] = useState([]);
-  const storePosts = useSelector((state) => state.posts.posts);
+  const [allPost, setAllPost] = useState(null);
+  const posts = useSelector((state) => state.posts.posts);
 
   useEffect(() => {
-    // if (storePosts.length > 0) {
-    //   setPosts(storePosts);
-    // } else {
-    //   appwriteService
-    //     .getAllPosts([])
-    //     .then((posts) => {
-    //         if(posts){
-    //             setPosts(posts.documents)
-    //         }
-    //     })
-    //     .catch((error) => console.log(error));
-    // }
-    appwriteService.getAllPosts([]).then((posts) => {
-      if (posts) {
-          setPosts(posts.documents)
-      }
-  })
+    if (posts?.length > 0) {
+        setAllPost(posts);
+    } else {
+      appwriteService
+        .getAllPosts()
+        .then((posts) => {
+          if (posts) {
+            setAllPost(posts.documents);
+            console.log("service returned")
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, []);
 
   return (
   <div className="w-full py-8">
     <Container>
-        <div className="flex flex-wrap justify-center items-center  w-full lg:gap-32 md:gap-32 gap-8">
-            {posts.map(post => (
-                <div key={post.$id} className="flex justify-center items-center w-full">
+        <div className="flex flex-wrap">
+            {allPost && allPost.map(post => (
+                <div key={post.$id} className="p-2 w-1/4">
                     <PostCard {...post} />
                 </div>
             ))}
